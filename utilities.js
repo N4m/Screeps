@@ -125,6 +125,7 @@ var utilities = {
         }
         console.log(closest);
         console.log(closestDistance);
+        return closest;
         // console.log('Pos1:'+pos1.x+', '+pos1.y);
         // console.log('Pos2:'+pos2.x+', '+pos2.y);
         // console.log('Distance:'+Math.sqrt((pos1.x -= pos2.x) * pos1.x + (pos1.y -= pos2.y) * pos1.y));
