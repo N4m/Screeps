@@ -107,8 +107,8 @@ var utilities = {
         return cost;
     },
     getDistance: function(pos1, pos2) {
-        console.log('Pos1:'+pos1);
-        console.log('Pos2:'+pos2);
+        console.log('Pos1:'+pos1.x+', '+pos1.y);
+        console.log('Pos2:'+pos2.x+', '+pos2.y);
         console.log('Distance:'+Math.sqrt((pos1.x -= pos2.x) * pos1.x + (pos1.y -= pos2.y) * pos1.y));
     }
 };
