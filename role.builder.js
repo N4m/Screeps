@@ -42,7 +42,7 @@ var roleBuilder = {
                     }
                 });
                 if(targets.length > 0) {
-                    utilities.getDistance(creep.pos, targets[0].pos);
+                    // utilities.getDistance(creep.pos, targets[0].pos);
                     if(creep.repair(targets[0]) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(targets[0]);
                     }
