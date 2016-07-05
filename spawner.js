@@ -66,7 +66,7 @@ var spawner = {
                     'Creep Stats: Builders=' + builders.length + '/' + numBuilders +
                     ', Harvesters=' + harvesters.length + '/' + numHarvesters +
                     ', Upgraders='+upgraders.length + '/' + numUpgraders +
-                    ', Suppliers='+suppliers.length + '/' + numSuppliers);
+                    ', Suppliers='+suppliers.length);
                 // console.log({'Builders': builders.length, 'Harvesters': harvesters.length, 'Upgraders': upgraders.length, 'Suppliers': suppliers.length});
 
                 // console.log(utilities.buildBody(harvesterConfig));
