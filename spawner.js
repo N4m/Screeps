@@ -51,7 +51,7 @@ var upgraderConfig = {
  * numSuppliers is the number of supplier creeps that should exist at all times
  * supplierBody is the body configuration that will be used for spawning any new suppliers
  */
-var numSuppliers = 2;
+var numSuppliers = 0;
 var supplierBody = {
     work: 2,
     carry: 1,
