@@ -120,8 +120,8 @@ var utilities = {
             var object = objects[o];
             var distance = me.getDistance(pos1, object.pos);
             if (distance < closestDistance) {
-                closest = object;
-                closestDistance = distance;
+                // closest = object;
+                // closestDistance = distance;
             }
         }
         console.log(closest);
