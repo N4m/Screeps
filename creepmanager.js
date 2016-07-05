@@ -90,7 +90,7 @@ var harvesterConfig = {
  * numBuilders is the number of builder creeps that should exist at all times
  * builderBody is the body configuration that will be used for spawning any new builders
  */
-var numBuilders = 2;
+var numBuilders = 3;
 var builderConfig = {
     work: 2,
     carry: 1,
