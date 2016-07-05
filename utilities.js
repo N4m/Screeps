@@ -112,13 +112,13 @@ var utilities = {
         // console.log('Distance:'+Math.sqrt((pos1.x -= pos2.x) * pos1.x + (pos1.y -= pos2.y) * pos1.y));
         return Math.sqrt((pos1.x -= pos2.x) * pos1.x + (pos1.y -= pos2.y) * pos1.y);
     },
-    getClosest: function(pos1, objects) {
+    getClosestStructure: function(creep, objects) {
         var me = this;
         var closest = objects[0];
         var closestDistance = 1000;
         for (var o in objects) {
             var object = objects[o];
-            // var distance = me.getDistance(pos1, object.pos);
+            // var distance = me.getDistance(creep.pos, object.pos);
             // if (distance < closestDistance) {
             //     // closest = object;
             //     // closestDistance = distance;
