@@ -46,9 +46,13 @@ var roleBuilder = {
                     var closest = utilities.getClosestStructure(creep, targets);
                     console.log(closest);
                     // console.log(targets[0]);
-                    if(creep.repair(targets[0]) == ERR_NOT_IN_RANGE) {
+                    // if(creep.repair(targets[0]) == ERR_NOT_IN_RANGE) {
+                    //     // console.log(targets[0].pos);
+                    //     creep.moveTo(targets[0]);
+                    // }
+                    if(creep.repair(closest) == ERR_NOT_IN_RANGE) {
                         // console.log(targets[0].pos);
-                        creep.moveTo(targets[0]);
+                        creep.moveTo(closest);
                     }
                 }
             }
