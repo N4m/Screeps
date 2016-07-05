@@ -105,6 +105,10 @@ var utilities = {
             }
         }
         return cost;
+    },
+    getDistance: function(pos1, pos2) {
+        console.log('Pos1:'+pos1);
+        console.log('Pos2:'+pos2);
     }
 };
 module.exports = utilities;
