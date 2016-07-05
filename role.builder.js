@@ -43,11 +43,11 @@ var roleBuilder = {
                 });
                 if(targets.length > 0) {
                     // utilities.getDistance(creep.pos, targets[0].pos);
-                    // var closest = utilities.getClosest(creep.pos, targets);
-                    // console.log(closest);
+                    var closest = utilities.getClosest(creep.pos, targets);
+                    console.log(closest);
                     // console.log(targets[0]);
                     if(creep.repair(targets[0]) == ERR_NOT_IN_RANGE) {
-                        console.log(targets[0].pos);
+                        // console.log(targets[0].pos);
                         creep.moveTo(targets[0]);
                     }
                 }
