@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 /*jshint loopfunc: true */
 var utilities = require('utilities');
-var rolemanager = require('rolemanager');
+var creepmanager = require('creepmanager');
 var towermanager = require('towermanager');
 /*
  * Module code goes here. Use 'module.exports' to export things:
