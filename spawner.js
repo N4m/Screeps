@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+/*jshint loopfunc: true */
 var utilities = require('utilities');
 /*
  * Module code goes here. Use 'module.exports' to export things:
@@ -18,19 +20,19 @@ var harvesterConfig = {
     work: 2,
     carry: 1,
     move: 1
-}
+};
 
 /*
  * Builder Configuration
  * numBuilders is the number of builder creeps that should exist at all times
  * builderBody is the body configuration that will be used for spawning any new builders
  */
-var numBuilders = 0;
+var numBuilders = 1;
 var builderConfig = {
     work: 2,
     carry: 1,
     move: 1
-}
+};
 
 /*
  * Upgrader Configuration
@@ -42,7 +44,7 @@ var upgraderConfig = {
     work: 2,
     carry: 1,
     move: 1
-}
+};
 
 var spawner = {
     run: function() {
@@ -50,21 +52,21 @@ var spawner = {
             var room = Game.rooms[r];
             var spawners = room.find(FIND_STRUCTURES, {
                 filter: (structure) => {
-                    return structure.structureType == STRUCTURE_SPAWN
+                    return structure.structureType == STRUCTURE_SPAWN;
                 }
             });
             if(spawners.length > 0) {
                 var spawner = spawners[0];
-                
+
                 var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder' && creep.room == room);
                 var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester' && creep.room == room);
                 var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader' && creep.room == room);
                 var suppliers = _.filter(Game.creeps, (creep) => creep.memory.role == 'supplier' && creep.room == room);
                 console.log('Creep Stats: Builders=' + builders.length + ', Harvesters=' + harvesters.length + ', Upgraders='+upgraders.length + ', Suppliers='+suppliers.length);
                 // console.log({'Builders': builders.length, 'Harvesters': harvesters.length, 'Upgraders': upgraders.length, 'Suppliers': suppliers.length});
-                
+
                 // console.log(utilities.buildBody(harvesterConfig));
-                
+
                 var newName = "";
                 var newType = "";
                 var newCost = 0;
@@ -105,8 +107,8 @@ var spawner = {
                 }
             }
         }
-        
+
     }
-}
+};
 
 module.exports = spawner;

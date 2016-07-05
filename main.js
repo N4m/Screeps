@@ -6,17 +6,17 @@ var utilities = require('utilities');
 var spawnInterval = 5;
 
 module.exports.loop = function () {
-    
+
     // Always place this memory cleaning code at the very top of your main loop!
     utilities.clearDead();
-    
-    if (Game.time % spawnInterval == 0) {
+
+    if (Game.time % spawnInterval === 0) {
         spawner.run();
     }
     // if (Game.time % 10 == 0) {
     //     console.log('10th Tick Loop');
     // }
-    
+
     // console.log(Math.floor(Math.random()*2));
 
     // var tower = Game.getObjectById('d3a93b33e9f7c914d222dfb5');
