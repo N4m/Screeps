@@ -117,11 +117,11 @@ var utilities = {
         var closest = objects[0];
         var closestDistance = 1000;
         for (var o in objects) {
-            var distance = me.getDistance(pos1, objects[o].pos);
-            if (distance < closestDistance) {
-                closest = objects[o];
-                closestDistance = distance;
-            }
+            // var distance = me.getDistance(pos1, objects[o].pos);
+            // if (distance < closestDistance) {
+            //     closest = objects[o];
+            //     closestDistance = distance;
+            // }
         }
         console.log(closest);
         console.log(closestDistance);
