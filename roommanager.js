@@ -11,15 +11,18 @@ var towermanager = require('towermanager');
  * var mod = require('roommanager');
  * mod.thing == 'a thing'; // true
  */
+var statusInterval = 5;
 
 var roommanager = {
     run: function() {
         for (var r in Game.rooms) {
             var room = Game.rooms[r];
-            console.log('Room '+room.name+' Status Report: '+
-                'Level: '+room.controller.level+', ',
-                'Upgrade Progress: '+room.controller.progress+'/'+room.controller.progressTotal
-            );
+            if (Game.time % statusInterval === 0) {
+                console.log('Room '+room.name+' Status Report: '+
+                    'Level: '+room.controller.level+', ',
+                    'Upgrade Progress: '+room.controller.progress+'/'+room.controller.progressTotal
+                );
+            }
         }
     }
 };
