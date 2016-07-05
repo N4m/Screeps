@@ -107,10 +107,14 @@ var utilities = {
         return cost;
     },
     getDistance: function(pos1, pos2) {
+        var pos1x = pos1.x;
+        var pos1y = pos1.y;
+        var pos2x = pos2.x;
+        var pos2y = pos2.y;
         // console.log('Pos1:'+pos1.x+', '+pos1.y);
         // console.log('Pos2:'+pos2.x+', '+pos2.y);
         // console.log('Distance:'+Math.sqrt((pos1.x -= pos2.x) * pos1.x + (pos1.y -= pos2.y) * pos1.y));
-        return Math.sqrt((pos1.x -= pos2.x) * pos1.x + (pos1.y -= pos2.y) * pos1.y);
+        return Math.sqrt((pos1x -= pos2x) * pos1x + (pos1y -= pos2y) * pos1y);
     },
     getClosestStructure: function(creep, objects) {
         var me = this;
@@ -118,13 +122,13 @@ var utilities = {
         var closestDistance = 1000;
         for (var o in objects) {
             var object = objects[o];
-            console.log(creep.pos);
-            console.log(object.pos);
-            // var distance = me.getDistance(creep.pos, object.pos);
-            // if (distance < closestDistance) {
-            //     // closest = object;
-            //     // closestDistance = distance;
-            // }
+            // console.log(creep.pos);
+            // console.log(object.pos);
+            var distance = me.getDistance(creep.pos, object.pos);
+            if (distance < closestDistance) {
+                closest = object;
+                closestDistance = distance;
+            }
         }
         console.log(closest);
         console.log(closestDistance);
