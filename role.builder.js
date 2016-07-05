@@ -8,6 +8,8 @@
  * var mod = require('role.builder');
  * mod.thing == 'a thing'; // true
  */
+
+var PathFinder = require('PathFinder');
 var roleBuilder = {
 
     /** @param {Creep} creep **/
@@ -41,6 +43,7 @@ var roleBuilder = {
                 });
                 if(targets.length > 0) {
                     // console.log('PathFinder Cost: '+PathFinder.CostMatrix.get(creep.pos, targets[0].pos));
+                    console.log(PathFinder);
                     if(creep.repair(targets[0]) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(targets[0]);
                     }
