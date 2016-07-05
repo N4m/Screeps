@@ -62,7 +62,11 @@ var spawner = {
                 var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester' && creep.room == room);
                 var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader' && creep.room == room);
                 var suppliers = _.filter(Game.creeps, (creep) => creep.memory.role == 'supplier' && creep.room == room);
-                console.log('Creep Stats: Builders=' + builders.length + ', Harvesters=' + harvesters.length + ', Upgraders='+upgraders.length + ', Suppliers='+suppliers.length);
+                console.log(
+                    'Creep Stats: Builders=' + builders.length + '/' + numBuilders +
+                    ', Harvesters=' + harvesters.length + '/' + numHarvesters +
+                    ', Upgraders='+upgraders.length + '/' + numUpgraders +
+                    ', Suppliers='+suppliers.length + '/' + numSuppliers);
                 // console.log({'Builders': builders.length, 'Harvesters': harvesters.length, 'Upgraders': upgraders.length, 'Suppliers': suppliers.length});
 
                 // console.log(utilities.buildBody(harvesterConfig));
