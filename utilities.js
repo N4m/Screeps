@@ -107,9 +107,27 @@ var utilities = {
         return cost;
     },
     getDistance: function(pos1, pos2) {
-        console.log('Pos1:'+pos1.x+', '+pos1.y);
-        console.log('Pos2:'+pos2.x+', '+pos2.y);
-        console.log('Distance:'+Math.sqrt((pos1.x -= pos2.x) * pos1.x + (pos1.y -= pos2.y) * pos1.y));
+        // console.log('Pos1:'+pos1.x+', '+pos1.y);
+        // console.log('Pos2:'+pos2.x+', '+pos2.y);
+        // console.log('Distance:'+Math.sqrt((pos1.x -= pos2.x) * pos1.x + (pos1.y -= pos2.y) * pos1.y));
+        return Math.sqrt((pos1.x -= pos2.x) * pos1.x + (pos1.y -= pos2.y) * pos1.y);
+    },
+    getClosest: function(pos1, objects) {
+        var me = this;
+        var closest = objects[o];
+        var closestDistance = 1000;
+        for (var o in objects) {
+            var distance = me.getDistance(pos1, objects[o].pos);
+            if (distance < closestDistance) {
+                closest = objects[o];
+                closestDistance = distance;
+            }
+        }
+        console.log(closest);
+        console.log(closestDistance);
+        // console.log('Pos1:'+pos1.x+', '+pos1.y);
+        // console.log('Pos2:'+pos2.x+', '+pos2.y);
+        // console.log('Distance:'+Math.sqrt((pos1.x -= pos2.x) * pos1.x + (pos1.y -= pos2.y) * pos1.y));
     }
 };
 module.exports = utilities;
