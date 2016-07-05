@@ -1,18 +1,18 @@
-var roleHarvester = require('role.harvester');
-var roleUpgrader = require('role.upgrader');
-var roleBuilder = require('role.builder');
-var spawner = require('spawner');
+// var spawner = require('spawner');
 var utilities = require('utilities');
-var spawnInterval = 5;
+var creepmanager = require('creepmanager');
+var roommanager = require('roommanager');
+var towermanager = require('towermanager');
+// var spawnInterval = 5;
 
 module.exports.loop = function () {
 
     // Always place this memory cleaning code at the very top of your main loop!
     utilities.clearDead();
 
-    if (Game.time % spawnInterval === 0) {
-        spawner.run();
-    }
+    // if (Game.time % spawnInterval === 0) {
+    //     spawner.run();
+    // }
     // if (Game.time % 10 == 0) {
     //     console.log('10th Tick Loop');
     // }
@@ -33,17 +33,19 @@ module.exports.loop = function () {
     //         tower.attack(closestHostile);
     //     }
     // }
-
-    for(var name in Game.creeps) {
-        var creep = Game.creeps[name];
-        if(creep.memory.role == 'harvester') {
-            roleHarvester.run(creep);
-        }
-        if(creep.memory.role == 'upgrader') {
-            roleUpgrader.run(creep);
-        }
-        if(creep.memory.role == 'builder') {
-            roleBuilder.run(creep);
-        }
-    }
+    roommanager.run();
+    towermanager.run();
+    creepmanager.run();
+    // for(var name in Game.creeps) {
+    //     var creep = Game.creeps[name];
+    //     if(creep.memory.role == 'harvester') {
+    //         roleHarvester.run(creep);
+    //     }
+    //     if(creep.memory.role == 'upgrader') {
+    //         roleUpgrader.run(creep);
+    //     }
+    //     if(creep.memory.role == 'builder') {
+    //         roleBuilder.run(creep);
+    //     }
+    // }
 }
