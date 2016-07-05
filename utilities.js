@@ -118,6 +118,8 @@ var utilities = {
         var closestDistance = 1000;
         for (var o in objects) {
             var object = objects[o];
+            console.log(creep.pos);
+            console.log(object.pos);
             // var distance = me.getDistance(creep.pos, object.pos);
             // if (distance < closestDistance) {
             //     // closest = object;
