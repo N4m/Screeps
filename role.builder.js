@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+/*jshint loopfunc: true */
 /*
  * Module code goes here. Use 'module.exports' to export things:
  * module.exports.thing = 'a thing';
@@ -6,7 +8,6 @@
  * var mod = require('role.builder');
  * mod.thing == 'a thing'; // true
  */
-
 var roleBuilder = {
 
     /** @param {Creep} creep **/
@@ -19,7 +20,7 @@ var roleBuilder = {
         //     console.log('Creep already set to '+ creep.memory.source);
         }
 
-	    if(creep.memory.building && creep.carry.energy == 0) {
+	    if(creep.memory.building && creep.carry.energy === 0) {
             creep.memory.building = false;
 	    }
 	    if(!creep.memory.building && creep.carry.energy == creep.carryCapacity) {
@@ -33,12 +34,13 @@ var roleBuilder = {
                     creep.moveTo(targets[0]);
                 }
             } else {
-                var targets = creep.room.find(FIND_STRUCTURES, {
+                targets = creep.room.find(FIND_STRUCTURES, {
                     filter: (structure) => {
                         return structure.hits < structure.hitsMax;
                     }
                 });
                 if(targets.length > 0) {
+                    console.log('PathFinder Cost: '+PathFinder.get(creep.pos, targets[0].pos));
                     if(creep.repair(targets[0]) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(targets[0]);
                     }

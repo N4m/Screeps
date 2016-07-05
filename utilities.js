@@ -18,43 +18,44 @@ var utilities = {
     },
     buildBody: function(config) {
         var body = [];
+        var i = 0;
         if (config.move && config.move !== 0) {
-            for (var i = 0 ; i < config.move ; i++) {
+            for (i = 0 ; i < config.move ; i++) {
                 body.push(MOVE);
             }
         }
         if (config.work && config.work !== 0) {
-            for (var i = 0 ; i < config.work ; i++) {
+            for (i = 0 ; i < config.work ; i++) {
                 body.push(WORK);
             }
         }
         if (config.carry && config.carry !== 0) {
-            for (var i = 0 ; i < config.carry ; i++) {
+            for (i = 0 ; i < config.carry ; i++) {
                 body.push(CARRY);
             }
         }
         if (config.attack && config.attack !== 0) {
-            for (var i = 0 ; i < config.attack ; i++) {
+            for (i = 0 ; i < config.attack ; i++) {
                 body.push(ATTACK);
             }
         }
         if (config.ranged_attack && config.ranged_attack !== 0) {
-            for (var i = 0 ; i < config.ranged_attack ; i++) {
+            for (i = 0 ; i < config.ranged_attack ; i++) {
                 body.push(RANGED_ATTACK);
             }
         }
         if (config.heal && config.heal !== 0) {
-            for (var i = 0 ; i < config.heal ; i++) {
+            for (i = 0 ; i < config.heal ; i++) {
                 body.push(HEAL);
             }
         }
         if (config.claim && config.claim !== 0) {
-            for (var i = 0 ; i < config.claim ; i++) {
+            for (i = 0 ; i < config.claim ; i++) {
                 body.push(CLAIM);
             }
         }
         if (config.tough && config.tough !== 0) {
-            for (var i = 0 ; i < config.tough ; i++) {
+            for (i = 0 ; i < config.tough ; i++) {
                 body.push(TOUGH);
             }
         }
@@ -62,43 +63,44 @@ var utilities = {
     },
     getCost: function(config) {
         var cost = 0;
+        var i = 0;
         if (config.move && config.move !== 0) {
-            for (var i = 0 ; i < config.move ; i++) {
+            for (i = 0 ; i < config.move ; i++) {
                 cost += 50;
             }
         }
         if (config.work && config.work !== 0) {
-            for (var i = 0 ; i < config.work ; i++) {
+            for (i = 0 ; i < config.work ; i++) {
                 cost += 100;
             }
         }
         if (config.carry && config.carry !== 0) {
-            for (var i = 0 ; i < config.carry ; i++) {
+            for (i = 0 ; i < config.carry ; i++) {
                 cost += 50;
             }
         }
         if (config.attack && config.attack !== 0) {
-            for (var i = 0 ; i < config.attack ; i++) {
+            for (i = 0 ; i < config.attack ; i++) {
                 cost += 80;
             }
         }
         if (config.ranged_attack && config.ranged_attack !== 0) {
-            for (var i = 0 ; i < config.ranged_attack ; i++) {
+            for (i = 0 ; i < config.ranged_attack ; i++) {
                 cost += 150;
             }
         }
         if (config.heal && config.heal !== 0) {
-            for (var i = 0 ; i < config.heal ; i++) {
+            for (i = 0 ; i < config.heal ; i++) {
                 cost += 250;
             }
         }
         if (config.claim && config.claim !== 0) {
-            for (var i = 0 ; i < config.claim ; i++) {
+            for (i = 0 ; i < config.claim ; i++) {
                 cost += 600;
             }
         }
         if (config.tough && config.tough !== 0) {
-            for (var i = 0 ; i < config.tough ; i++) {
+            for (i = 0 ; i < config.tough ; i++) {
                 cost += 10;
             }
         }
