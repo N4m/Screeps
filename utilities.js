@@ -109,6 +109,7 @@ var utilities = {
     getDistance: function(pos1, pos2) {
         console.log('Pos1:'+pos1);
         console.log('Pos2:'+pos2);
+        console.log('Distance:'+Math.sqrt((pos1.x -= pos2.x) * pos1.x + (pos1.y -= pos2.y) * pos1.y));
     }
 };
 module.exports = utilities;
