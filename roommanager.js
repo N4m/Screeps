@@ -16,6 +16,10 @@ var roommanager = {
     run: function() {
         for (var r in Game.rooms) {
             var room = Game.rooms[r];
+            console.log('Room '+room.name+' Status Report: '+
+                'Level: '+room.controller.level+', ',
+                'Upgrade Progress: '+room.controller.progress+'/'+room.controller.progressTotal
+            );
         }
     }
 };
