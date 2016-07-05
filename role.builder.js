@@ -43,8 +43,8 @@ var roleBuilder = {
                 });
                 if(targets.length > 0) {
                     // utilities.getDistance(creep.pos, targets[0].pos);
-                    console.log(utilities.getClosest(creep.pos, targets));
-                    console.log(targets[0]);
+                    // console.log(utilities.getClosest(creep.pos, targets));
+                    // console.log(targets[0]);
                     if(creep.repair(targets[0]) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(targets[0]);
                     }
