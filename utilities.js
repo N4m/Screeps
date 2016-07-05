@@ -114,7 +114,7 @@ var utilities = {
     },
     getClosest: function(pos1, objects) {
         var me = this;
-        var closest = objects[o];
+        var closest = objects[0];
         var closestDistance = 1000;
         // for (var o in objects) {
         //     var distance = me.getDistance(pos1, objects[o].pos);
