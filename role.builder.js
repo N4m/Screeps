@@ -9,7 +9,6 @@
  * mod.thing == 'a thing'; // true
  */
 
-var PathFinder = require('PathFinder');
 var roleBuilder = {
 
     /** @param {Creep} creep **/
