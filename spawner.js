@@ -46,6 +46,18 @@ var upgraderConfig = {
     move: 1
 };
 
+/*
+ * Supplier Configuration
+ * numSuppliers is the number of supplier creeps that should exist at all times
+ * supplierBody is the body configuration that will be used for spawning any new suppliers
+ */
+var numSuppliers = 2;
+var supplierBody = {
+    work: 2,
+    carry: 1,
+    move: 1
+};
+
 var spawner = {
     run: function() {
         for (var r in Game.rooms) {
@@ -62,11 +74,12 @@ var spawner = {
                 var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester' && creep.room == room);
                 var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader' && creep.room == room);
                 var suppliers = _.filter(Game.creeps, (creep) => creep.memory.role == 'supplier' && creep.room == room);
-                console.log(
-                    'Creep Stats: Builders=' + builders.length + '/' + numBuilders +
-                    ', Harvesters=' + harvesters.length + '/' + numHarvesters +
-                    ', Upgraders='+upgraders.length + '/' + numUpgraders +
-                    ', Suppliers='+suppliers.length);
+                console.log('Creep Stats: ' +
+                    'Builders=' + builders.length + '/' + numBuilders + ', ' +
+                    'Harvesters=' + harvesters.length + '/' + numHarvesters + ', ' +
+                    'Upgraders='+upgraders.length + '/' + numUpgraders + ', ' +
+                    'Suppliers='+suppliers.length + '/' + numSuppliers
+                );
                 // console.log({'Builders': builders.length, 'Harvesters': harvesters.length, 'Upgraders': upgraders.length, 'Suppliers': suppliers.length});
 
                 // console.log(utilities.buildBody(harvesterConfig));
