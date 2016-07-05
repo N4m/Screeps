@@ -37,7 +37,7 @@ var builderConfig = {
  * numUpgraders is the number of upgrader creeps that should exist at all times
  * upgraderBody is the body configuration that will be used for spawning any new upgraders
  */
-var numUpgraders = 1;
+var numUpgraders = 2;
 var upgraderConfig = {
     work: 2,
     carry: 1,
