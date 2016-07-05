@@ -44,7 +44,7 @@ var roleBuilder = {
                 if(targets.length > 0) {
                     // utilities.getDistance(creep.pos, targets[0].pos);
                     var closest = utilities.getClosestStructure(creep, targets);
-                    console.log(closest);
+                    // console.log(closest);
                     // console.log(targets[0]);
                     // if(creep.repair(targets[0]) == ERR_NOT_IN_RANGE) {
                     //     // console.log(targets[0].pos);

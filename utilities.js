@@ -130,8 +130,8 @@ var utilities = {
                 closestDistance = distance;
             }
         }
-        console.log(closest);
-        console.log(closestDistance);
+        // console.log(closest);
+        // console.log(closestDistance);
         return closest;
         // console.log('Pos1:'+pos1.x+', '+pos1.y);
         // console.log('Pos2:'+pos2.x+', '+pos2.y);
