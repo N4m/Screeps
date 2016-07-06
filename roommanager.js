@@ -46,10 +46,10 @@ var roommanager = {
                 var creepStatus = [];
                 for (role in roles) {
                     if (roles[role].count) {
-                        creepStatus.push(role+':'+roles[role].count);
+                        creepStatus.push(role+':'+roles[role].count+'/'+roles[role].ammount);
                     }
                 }
-                console.log('ROOMMANAGER: Room Creep '+room.name+' Status Report'+creepStatus.join(', '));
+                console.log('ROOMMANAGER: Room Creep '+room.name+' Status Report: '+creepStatus.join(', '));
             }
         }
     }
