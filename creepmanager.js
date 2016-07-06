@@ -18,7 +18,7 @@ var roles = {
     harvester: {
         amount: 2,
         body: {
-            work: 2,
+            work: 4,
             carry: 1,
             move: 2
         }
