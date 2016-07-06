@@ -138,7 +138,7 @@ var utilities = {
         }
         var leastSource = 1000;
         for (var sc in sourceCounts) {
-            if (sourceCounts[sc]>leastSource) {
+            if (sourceCounts[sc]<leastSource) {
                 leastSource = sc;
             }
         }
