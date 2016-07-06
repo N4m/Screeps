@@ -135,7 +135,6 @@ var utilities = {
                 var sources = creep.room.find(FIND_SOURCES);
                 var sourceCounts = [];
                 for (var s in sources) {
-                    console.log('Getting Harvesters');
                     var harvesters = _.filter(Game.creeps, (creep) => 'harvesters' == role && creep.room == room && creep.memory.source == s);
                     console.log('Got '+harvesters.length+' Harvesters');
                     sourceCounts[s] = harvesters.length;

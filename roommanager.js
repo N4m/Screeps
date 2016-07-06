@@ -29,7 +29,7 @@ var roommanager = {
                     creepReport.push(role+'='+roles[role].creeps.length+'/'+roles[role].amount);
                 }
                 console.log('ROOMMANAGER: Room Creep '+room.name+' Status Report: '+creepReport.join(', '));
-                utilities.getNextSource();
+                utilities.getNextSource(room);
                 // var roomcreeps = [];
                 // for (var c in Game.creeps) {
                 //     if (Game.creeps[c].room == room) {
