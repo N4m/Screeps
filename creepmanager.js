@@ -133,7 +133,7 @@ var creepmanager = {
     dieingCreeps: function() {
         for (var c in Game.creeps) {
             var creep = Game.creeps[c];
-            if (50 > creep.ticksToLive) {
+            if (100 > creep.ticksToLive) {
                 console.log('CREEPMANAGER: '+creep.name+' - '+creep.ticksToLive+' left');
             }
         }
