@@ -143,6 +143,7 @@ var utilities = {
             }
         }
         console.log('Next Source: '+leastSource);
+        return leastSource;
     }
 };
 module.exports = utilities;

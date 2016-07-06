@@ -13,7 +13,7 @@ var roleHarvester = {
     run: function(creep) {
         var sources = creep.room.find(FIND_SOURCES);
         if (typeof creep.memory.source === "undefined") {
-            creep.memory.source = Math.floor(Math.random()*sources.length);
+            creep.memory.source = utilities.getNextSource(creep);
             console.log('Setting creep ('+creep.name+') source to '+creep.memory.source);
         // } else {
         //     console.log('Creep already set to '+ creep.memory.source);
