@@ -30,8 +30,8 @@ var roommanager = {
                     }
                 }
                 var role;
-                for (var rc in creeps) {
-                    var creep = creeps[rc];
+                for (var rc in roomcreeps) {
+                    var creep = roomcreeps[rc];
                     for (role in roles) {
                         if (creep.memory.role == role) {
                             if (roles[role].count) {
