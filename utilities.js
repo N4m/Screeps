@@ -132,7 +132,7 @@ var utilities = {
         for (var r in Game.rooms) {
             var room = Game.rooms[r];
             if (room == curRoom) {
-                var sources = creep.room.find(FIND_SOURCES);
+                var sources = room.find(FIND_SOURCES);
                 var sourceCounts = [];
                 for (var s in sources) {
                     var harvesters = _.filter(Game.creeps, (creep) => 'harvesters' == role && creep.room == room && creep.memory.source == s);
