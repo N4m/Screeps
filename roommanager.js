@@ -20,7 +20,7 @@ var roommanager = {
             for (var r in Game.rooms) {
                 var room = Game.rooms[r];
                 var progress = room.controller.progress;
-                var progresTotal = room.controller.progressTotal;
+                var progressTotal = room.controller.progressTotal;
                 var progressPercent = (progressTotal/progress)*100;
                 console.log('ROOMMANAGER: Room '+room.name+' Status Report: '+
                     'Level: '+room.controller.level+', ',
