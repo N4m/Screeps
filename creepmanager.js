@@ -58,9 +58,9 @@ var roles = {
     upgrader: {
         amount: 3,
         body: {
-            work: 2,
+            work: 3,
             carry: 2,
-            move: 2
+            move: 3
         }
     },
     warrior: {
