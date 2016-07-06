@@ -134,7 +134,7 @@ var creepmanager = {
         for (var c in Game.creeps) {
             var creep = Game.creeps[c];
             if (100 > creep.ticksToLive) {
-                console.log('CREEPMANAGER: '+creep.name+' - '+creep.ticksToLive+' left');
+                console.log('CREEPMANAGER: '+creep.name+' - '+creep.memory.role+' - '+creep.ticksToLive+' left');
             }
         }
     },
