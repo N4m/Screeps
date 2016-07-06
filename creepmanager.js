@@ -127,6 +127,15 @@ var creepmanager = {
         me.runCreeps();
         if (Game.time % spawnInterval === 0) {
             me.spawner();
+            me.dieingCreeps();
+        }
+    },
+    dieingCreeps: function() {
+        for (var c in Game.creeps) {
+            var creep = Game.creeps[c];
+            if (50 < creep.ticksToLive) {
+                console.log('CREEPMANAGER: '+creep.name+' - '+creep.ticksToLive+' left');
+            }
         }
     },
     runCreeps: function() {
