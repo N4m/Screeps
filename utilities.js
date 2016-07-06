@@ -127,22 +127,22 @@ var utilities = {
         }
         return closest;
     },
-    getNextSource: function(curRoom) {
-        console.log('Get Next Source');
-        for (var r in Game.rooms) {
-            var room = Game.rooms[r];
-            if (room == curRoom) {
-                var sources = room.find(FIND_SOURCES);
-                var sourceCounts = [];
-                for (var s in sources) {
-                    var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester' && creep.room == room && creep.memory.source == s);
-                    console.log('Got '+harvesters.length+' Harvesters');
-                    sourceCounts[s] = harvesters.length;
-                    console.log('UTILITIES: Source '+s+' = '+harvesters.length);
-                }
-                break;
+    getNextSource: function(creep) {
+        var room = creep.room;
+        var sources = room.find(FIND_SOURCES);
+        var sourceCounts = [];
+        for (var s in sources) {
+            var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester' && creep.room == room && creep.memory.source == s);
+            sourceCounts[s] = harvesters.length;
+            console.log('UTILITIES: Source '+s+' = '+harvesters.length);
+        }
+        var leastSource = 1000;
+        for (var sc in sourceCounts) {
+            if (sourceCounts[sc]<leastSource) {
+                leastSource = sc;
             }
         }
+        console.log('Next Source: '+leastSource);
     }
 };
 module.exports = utilities;
