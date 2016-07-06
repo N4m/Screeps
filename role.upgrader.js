@@ -7,6 +7,7 @@
  * mod.thing == 'a thing'; // true
  */
 
+var utilities = require('utilities');
 var roleUpgrader = {
 
     /** @param {Creep} creep **/
