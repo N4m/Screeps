@@ -6,7 +6,7 @@
  * var mod = require('role.harvester');
  * mod.thing == 'a thing'; // true
  */
-
+var utilities = require('utilities');
 var roleHarvester = {
 
     /** @param {Creep} creep **/
@@ -18,6 +18,7 @@ var roleHarvester = {
         // } else {
         //     console.log('Creep already set to '+ creep.memory.source);
         }
+        var closest;
 	    if(creep.carry.energy < creep.carryCapacity) {
             if(creep.harvest(sources[creep.memory.source]) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(sources[creep.memory.source]);
@@ -25,13 +26,14 @@ var roleHarvester = {
         } else {
             var targets = creep.room.find(FIND_STRUCTURES, {
                     filter: (structure) => {
-                        return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN || structure.structureType == STRUCTURE_CONTAINER || structure.structureType == STRUCTURE_TOWER)
-                        && structure.energy < structure.energyCapacity;
+                        return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN || structure.structureType == STRUCTURE_CONTAINER || structure.structureType == STRUCTURE_TOWER) &&
+                        structure.energy < structure.energyCapacity;
                     }
             });
             if(targets.length > 0) {
-                if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(targets[0]);
+                closest = utilities.getClosestStructure(creep, targets);
+                if(creep.transfer(closest, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(closest);
                 }
             } else {
                 //  || structure.store[RESOURCE_ENERGY] < structure.storeCapacity)
@@ -41,8 +43,9 @@ var roleHarvester = {
                     }
                 });
                 if(containers.length > 0) {
-                    if(creep.transfer(containers[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                        creep.moveTo(containers[0]);
+                    closest = utilities.getClosestStructure(creep, containers);
+                    if(creep.transfer(closest, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(closest);
                     }
                 }
             }
