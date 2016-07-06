@@ -24,7 +24,7 @@ var roles = {
         }
     },
     builder: {
-        amount: 2,
+        amount: 3,
         body: {
             work: 2,
             carry: 1,
@@ -32,7 +32,7 @@ var roles = {
         }
     },
     healer: {
-        amount: 2,
+        amount: 0,
         body: {
             work: 2,
             carry: 1,
@@ -40,7 +40,7 @@ var roles = {
         }
     },
     scout: {
-        amount: 2,
+        amount: 0,
         body: {
             work: 2,
             carry: 1,
@@ -48,7 +48,7 @@ var roles = {
         }
     },
     supplier: {
-        amount: 2,
+        amount: 0,
         body: {
             work: 2,
             carry: 1,
@@ -64,7 +64,7 @@ var roles = {
         }
     },
     warrior: {
-        amount: 2,
+        amount: 0,
         body: {
             work: 2,
             carry: 1,
@@ -158,7 +158,7 @@ var creepmanager = {
                 var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester' && creep.room == room);
                 var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader' && creep.room == room);
                 var suppliers = _.filter(Game.creeps, (creep) => creep.memory.role == 'supplier' && creep.room == room);
-                console.log('Creep Stats: ' +
+                console.log('CREEPMANAGER: Creep Stats: ' +
                     'Builders=' + builders.length + '/' + numBuilders + ', ' +
                     'Harvesters=' + harvesters.length + '/' + numHarvesters + ', ' +
                     'Upgraders='+upgraders.length + '/' + numUpgraders + ', ' +
@@ -189,25 +189,28 @@ var creepmanager = {
                     newName = spawner.createCreep(newConfig, undefined, {role: newType});
                 }
                 if (_.isString(newName) && newName !== "") {
-                    console.log('Spawning new ' + newType + ': ' + newName);
+                    console.log('CREEPMANAGER: Spawning new ' + newType + ': ' + newName);
                 } else {
                     if (newName == -1) {
-                        console.log('SPAWN ERROR: Not owner of spawn');
+                        console.log('CREEPMANAGER: SPAWN ERROR: Not owner of spawn');
                     } else if (newName == -3) {
-                        console.log('SPAWN ERROR: Creep with name already exists');
+                        console.log('CREEPMANAGER: SPAWN ERROR: Creep with name already exists');
                     } else if (newName == -4) {
-                        console.log('SPAWN ERROR: Spawn is already busy creating a creep');
+                        console.log('CREEPMANAGER: SPAWN ERROR: Spawn is already busy creating a creep');
                     } else if (newName == -6) {
-                        console.log('SPAWN ERROR: Not enough energy to create ' + newType + ', body requires '+newCost+' you have '+room.energyAvailable+'/'+room.energyCapacityAvailable);
+                        console.log('CREEPMANAGER: SPAWN ERROR: Not enough energy to create ' + newType + ', body requires '+newCost+' you have '+room.energyAvailable+'/'+room.energyCapacityAvailable);
                         // console.log(newConfig);
                     } else if (newName == -10) {
-                        console.log('SPAWN ERROR: Body is not properly described');
+                        console.log('CREEPMANAGER: SPAWN ERROR: Body is not properly described');
                     } else if (newName == -14) {
-                        console.log('SPAWN ERROR: Room Controller level is not enough to use this spawn');
+                        console.log('CREEPMANAGER: SPAWN ERROR: Room Controller level is not enough to use this spawn');
                     }
                 }
             }
         }
+    },
+    getRoles: function() {
+        return roles;
     }
 };
 module.exports = creepmanager;

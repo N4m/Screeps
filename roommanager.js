@@ -15,13 +15,41 @@ var statusInterval = 5;
 
 var roommanager = {
     run: function() {
-        for (var r in Game.rooms) {
-            var room = Game.rooms[r];
-            if (Game.time % statusInterval === 0) {
-                console.log('Room '+room.name+' Status Report: '+
+        if (Game.time % statusInterval === 0) {
+            var roles = creepmanager.getRoles();
+            for (var r in Game.rooms) {
+                var room = Game.rooms[r];
+                console.log('ROOMMANAGER: Room '+room.name+' Status Report: '+
                     'Level: '+room.controller.level+', ',
                     'Upgrade Progress: '+room.controller.progress+'/'+room.controller.progressTotal
                 );
+                var roomcreeps = [];
+                for (var c in Game.creeps) {
+                    if (Game.creeps[c].room == room) {
+                        roomcreeps.push(Game.creeps[c]);
+                    }
+                }
+                var role;
+                for (var rc in creeps) {
+                    var creep = creeps[rc];
+                    for (role in roles) {
+                        if (creep.memory.role == role) {
+                            if (roles[role].count) {
+                                roles[role].count++;
+                            } else {
+                                roles[role].count = 1;
+                            }
+                            break;
+                        }
+                    }
+                }
+                var creepStatus = [];
+                for (role in roles) {
+                    if (roles[role].count) {
+                        creepStatus.push(role+':'+roles[role].count);
+                    }
+                }
+                console.log('ROOMMANAGER: Room Creep '+room.name+' Status Report'+creepStatus.join(', '));
             }
         }
     }
