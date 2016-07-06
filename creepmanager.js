@@ -24,7 +24,7 @@ var roles = {
         }
     },
     builder: {
-        amount: 0,
+        amount: 1,
         body: {
             work: 2,
             carry: 1,
