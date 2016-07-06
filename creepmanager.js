@@ -167,9 +167,9 @@ var creepmanager = {
                     roles[role].creeps = _.filter(Game.creeps, (creep) => creep.memory.role == role && creep.room == room);
                     // creepReport.push(role+'='+roles[role].creeps.length+'/'+roles[role].amount);
                     if (roles[role].creeps.length < roles[role].amount) {
-                        newName = spawner.createCreep(newConfig, undefined, {role: newType});
+                        newName = spawner.createCreep(utilities.buildBody(roles[role].body), undefined, {role: role});
                         if (_.isString(newName) && newName !== "") {
-                            console.log('CREEPMANAGER: Spawning new ' + newType + ': ' + newName);
+                            console.log('CREEPMANAGER: Spawning new ' + role + ': ' + newName);
                         } else {
                             if (newName == -1) {
                                 console.log('CREEPMANAGER: SPAWN ERROR: Not owner of spawn');
@@ -178,7 +178,7 @@ var creepmanager = {
                             } else if (newName == -4) {
                                 console.log('CREEPMANAGER: SPAWN ERROR: Spawn is already busy creating a creep');
                             } else if (newName == -6) {
-                                console.log('CREEPMANAGER: SPAWN ERROR: Not enough energy to create ' + newType + ', body requires '+newCost+' you have '+room.energyAvailable+'/'+room.energyCapacityAvailable);
+                                console.log('CREEPMANAGER: SPAWN ERROR: Not enough energy to create ' + role + ', body requires '+utilities.getCost(roles[role].body)+' you have '+room.energyAvailable+'/'+room.energyCapacityAvailable);
                                 // console.log(newConfig);
                             } else if (newName == -10) {
                                 console.log('CREEPMANAGER: SPAWN ERROR: Body is not properly described');
