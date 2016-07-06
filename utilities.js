@@ -128,6 +128,7 @@ var utilities = {
         return closest;
     },
     getNextSource: function(curRoom) {
+        console.log('Get Next Source');
         for (var r in Game.rooms) {
             var room = Game.rooms[r];
             if (room == curRoom) {
