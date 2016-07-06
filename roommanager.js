@@ -19,9 +19,12 @@ var roommanager = {
             var roles = creepmanager.getRoles();
             for (var r in Game.rooms) {
                 var room = Game.rooms[r];
+                var progress = room.controller.progress;
+                var progresTotal = room.controller.progressTotal;
+                var progressPercent = (progressTotal/progress)*100;
                 console.log('ROOMMANAGER: Room '+room.name+' Status Report: '+
                     'Level: '+room.controller.level+', ',
-                    'Upgrade Progress: '+room.controller.progress+'/'+room.controller.progressTotal
+                    'Upgrade Progress: '+progress+'/'+progressTotal+'('+progressPercent.toFixed(2)+'%)'
                 );
                 var creepReport = [];
                 for (var role in roles) {
