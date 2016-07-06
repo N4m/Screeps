@@ -16,15 +16,15 @@ var spawnInterval = 5;
 
 var roles = {
     harvester: {
-        amount: 2,
+        amount: 3,
         body: {
             work: 2,
             carry: 1,
-            move: 1
+            move: 2
         }
     },
     builder: {
-        amount: 3,
+        amount: 1,
         body: {
             work: 2,
             carry: 1,
@@ -56,7 +56,7 @@ var roles = {
         }
     },
     upgrader: {
-        amount: 2,
+        amount: 3,
         body: {
             work: 2,
             carry: 1,
