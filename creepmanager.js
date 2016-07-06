@@ -27,8 +27,8 @@ var roles = {
         amount: 2,
         body: {
             work: 2,
-            carry: 1,
-            move: 1
+            carry: 2,
+            move: 2
         }
     },
     healer: {
@@ -59,8 +59,8 @@ var roles = {
         amount: 3,
         body: {
             work: 2,
-            carry: 1,
-            move: 1
+            carry: 2,
+            move: 2
         }
     },
     warrior: {
@@ -71,54 +71,6 @@ var roles = {
             move: 1
         }
     }
-};
-
-/*
- * Harvester Configuration
- * numHarvesters is the number of harvester creeps that should exist at all times
- * harvesterBody is the body configuration that will be used for spawning any new harvesters
- */
-var numHarvesters = 2;
-var harvesterConfig = {
-    work: 2,
-    carry: 1,
-    move: 1
-};
-
-/*
- * Builder Configuration
- * numBuilders is the number of builder creeps that should exist at all times
- * builderBody is the body configuration that will be used for spawning any new builders
- */
-var numBuilders = 3;
-var builderConfig = {
-    work: 2,
-    carry: 1,
-    move: 1
-};
-
-/*
- * Upgrader Configuration
- * numUpgraders is the number of upgrader creeps that should exist at all times
- * upgraderBody is the body configuration that will be used for spawning any new upgraders
- */
-var numUpgraders = 2;
-var upgraderConfig = {
-    work: 2,
-    carry: 1,
-    move: 1
-};
-
-/*
- * Supplier Configuration
- * numSuppliers is the number of supplier creeps that should exist at all times
- * supplierBody is the body configuration that will be used for spawning any new suppliers
- */
-var numSuppliers = 0;
-var supplierBody = {
-    work: 2,
-    carry: 1,
-    move: 1
 };
 
 var creepmanager = {
