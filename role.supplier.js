@@ -49,17 +49,19 @@ var roleSupplier = {
                 }
             } else {
                 //  || structure.store[RESOURCE_ENERGY] < structure.storeCapacity)
-                containers = creep.room.find(FIND_STRUCTURES, {
+                targets = creep.room.find(FIND_STRUCTURES, {
                     filter: (structure) => {
-                        return structure.structureType == STRUCTURE_CONTAINER && structure.store[RESOURCE_ENERGY] < structure.storeCapacity;
+                        return structure.hits < structure.hitsMax;
                     }
                 });
-                if(containers.length > 0) {
-                    closest = utilities.getClosestStructure(creep, containers);
-                    if(creep.transfer(closest, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                if(targets.length > 0) {
+                    // utilities.getDistance(creep.pos, targets[0].pos);
+                    closest = utilities.getClosestStructure(creep, targets);
+                    if(creep.repair(closest) == ERR_NOT_IN_RANGE) {
+                        // console.log(targets[0].pos);
                         creep.moveTo(closest);
                     }
-                }
+                }}
             }
         }
 	}
