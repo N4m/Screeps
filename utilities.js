@@ -115,17 +115,18 @@ var utilities = {
     },
     getClosestStructure: function(creep, objects) {
         var me = this;
-        var closest = objects[0];
-        var closestDistance = 1000;
-        for (var o in objects) {
-            var object = objects[o];
-            var distance = me.getDistance(creep.pos, object.pos);
-            if (distance < closestDistance) {
-                closest = object;
-                closestDistance = distance;
-            }
-        }
-        return closest;
+        return creep.pos.findClosestByRange(objects);
+        // var closest = objects[0];
+        // var closestDistance = 1000;
+        // for (var o in objects) {
+        //     var object = objects[o];
+        //     var distance = me.getDistance(creep.pos, object.pos);
+        //     if (distance < closestDistance) {
+        //         closest = object;
+        //         closestDistance = distance;
+        //     }
+        // }
+        // return closest;
     },
     getNextSource: function(creep) {
         var room = creep.room;
