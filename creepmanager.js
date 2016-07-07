@@ -20,7 +20,7 @@ var roles = {
         amount: 2,
         body: {
             work: 3,
-            carry: 1,
+            carry: 2,
             move: 2
         }
     },
@@ -28,7 +28,7 @@ var roles = {
         amount: 3,
         body: {
             work: 3,
-            carry: 1,
+            carry: 2,
             move: 2
         }
     },
@@ -52,7 +52,7 @@ var roles = {
         amount: 1,
         body: {
             work: 3,
-            carry: 1,
+            carry: 2,
             move: 2
         }
     },
@@ -60,7 +60,7 @@ var roles = {
         amount: 3,
         body: {
             work: 3,
-            carry: 1,
+            carry: 2,
             move: 2
         }
     },
