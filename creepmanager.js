@@ -4,6 +4,7 @@ var utilities = require('utilities');
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
+var roleSupplier = require('role.supplier');
 /*
  * Module code goes here. Use 'module.exports' to export things:
  * module.exports.thing = 'a thing';
@@ -101,6 +102,9 @@ var creepmanager = {
             }
             if(creep.memory.role == 'builder') {
                 roleBuilder.run(creep);
+            }
+            if(creep.memory.role == 'supplier') {
+                roleSupplier.run(creep);
             }
         }
     },
