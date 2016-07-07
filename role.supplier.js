@@ -6,6 +6,7 @@
  * var mod = require('role.supplier');
  * mod.thing == 'a thing'; // true
  */
+var utilities = require('utilities');
 
 var roleSupplier = {
 
