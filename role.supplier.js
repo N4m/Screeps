@@ -61,7 +61,7 @@ var roleSupplier = {
                         // console.log(targets[0].pos);
                         creep.moveTo(closest);
                     }
-                }}
+                }
             }
         }
 	}
