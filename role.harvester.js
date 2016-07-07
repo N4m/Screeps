@@ -24,18 +24,18 @@ var roleHarvester = {
                 creep.moveTo(sources[creep.memory.source]);
             }
         } else {
-            var targets = creep.room.find(FIND_STRUCTURES, {
-                    filter: (structure) => {
-                        return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN || structure.structureType == STRUCTURE_CONTAINER || structure.structureType == STRUCTURE_TOWER) &&
-                        structure.energy < structure.energyCapacity;
-                    }
-            });
-            if(targets.length > 0) {
-                closest = utilities.getClosestStructure(creep, targets);
-                if(creep.transfer(closest, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(closest);
-                }
-            } else {
+            // var targets = creep.room.find(FIND_STRUCTURES, {
+            //         filter: (structure) => {
+            //             return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN || structure.structureType == STRUCTURE_CONTAINER || structure.structureType == STRUCTURE_TOWER) &&
+            //             structure.energy < structure.energyCapacity;
+            //         }
+            // });
+            // if(targets.length > 0) {
+            //     closest = utilities.getClosestStructure(creep, targets);
+            //     if(creep.transfer(closest, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+            //         creep.moveTo(closest);
+            //     }
+            // } else {
                 //  || structure.store[RESOURCE_ENERGY] < structure.storeCapacity)
                 var containers = creep.room.find(FIND_STRUCTURES, {
                     filter: (structure) => {
@@ -48,7 +48,7 @@ var roleHarvester = {
                         creep.moveTo(closest);
                     }
                 }
-            }
+            // }
         }
 	}
 };
