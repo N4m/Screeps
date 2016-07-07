@@ -57,7 +57,7 @@ var roles = {
         }
     },
     upgrader: {
-        amount: 3,
+        amount: 4,
         body: {
             work: 3,
             carry: 2,
