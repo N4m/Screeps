@@ -19,17 +19,17 @@ var roles = {
     harvester: {
         amount: 2,
         body: {
-            work: 3,
-            carry: 2,
-            move: 2
+            work: 2,
+            carry: 1,
+            move: 1
         }
     },
     builder: {
-        amount: 3,
+        amount: 1,
         body: {
-            work: 3,
-            carry: 2,
-            move: 2
+            work: 2,
+            carry: 1,
+            move: 1
         }
     },
     healer: {
@@ -49,19 +49,19 @@ var roles = {
         }
     },
     supplier: {
-        amount: 1,
+        amount: 0,
         body: {
-            work: 3,
-            carry: 2,
-            move: 2
+            work: 2,
+            carry: 1,
+            move: 1
         }
     },
     upgrader: {
-        amount: 4,
+        amount: 2,
         body: {
-            work: 3,
-            carry: 2,
-            move: 2
+            work: 2,
+            carry: 1,
+            move: 1
         }
     },
     warrior: {
