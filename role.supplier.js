@@ -21,7 +21,7 @@ var roleSupplier = {
         }
         var containers;
         var closest;
-	    if(creep.carry.energy < creep.carryCapacity) {
+	    if(creep.carry.energy <= 0) {
             containers = creep.room.find(FIND_STRUCTURES, {
                 filter: (structure) => {
                     return structure.structureType == STRUCTURE_CONTAINER && structure.store[RESOURCE_ENERGY] !== 0;
