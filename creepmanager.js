@@ -48,11 +48,11 @@ var roles = {
         }
     },
     supplier: {
-        amount: 0,
+        amount: 1,
         body: {
-            work: 2,
+            work: 3,
             carry: 1,
-            move: 1
+            move: 2
         }
     },
     upgrader: {
